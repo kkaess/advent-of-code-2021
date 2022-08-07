@@ -1,0 +1,18 @@
+start: packet "0"*
+packet: VERSION (literal|operator)
+CH: /[0-1]/
+_ZED: "0"
+_ONE: "1"
+VERSION: CH ~ 3
+literal.2: "100" _ntnc* _tnc
+_ntnc: _ONE NC
+_tnc: _ZED NC
+NC: CH ~ 4
+operator: TYPE length packet+
+TYPE: CH ~ 3
+length: _ltypea | _ltypeb
+_ltypea: "0" LTYPEA
+_ltypeb: "1" LTYPEB
+
+LTYPEA: CH ~ 15
+LTYPEB: CH ~ 11

@@ -7,7 +7,6 @@ lines = np.loadtxt('input/input_day3.txt', dtype=str)
 
 # Part 1
 
-sum = 0
 ones = [0] * 12
 zeros = [0] * 12
 for line in lines:
@@ -43,7 +42,6 @@ def find_first_one_sorted(a_list, index):
             upper_bound = curr_index
         else:
             lower_bound = curr_index
-
 
     return upper_bound
 
