@@ -3,10 +3,11 @@ def day2(filename):
         lines = f.readlines()
     return (part1(lines), part2(lines))
 
+
 def part1(lines):
     h = 0
     v = 0
-    
+
     for line in lines:
         temp = line.split(' ')
         if temp[0] == 'forward':
@@ -16,6 +17,7 @@ def part1(lines):
         elif temp[0] == 'up':
             v -= int(temp[1])
     return h * v
+
 
 def part2(lines):
     h = 0
@@ -33,7 +35,8 @@ def part2(lines):
             a -= int(temp[1])
     return h * v
 
+
 if __name__ == '__main__':
-    answer_day1,answer_day2 = day2('input/input_day2.txt')
+    answer_day1, answer_day2 = day2('input/input_day2.txt')
     print(answer_day1)
     print(answer_day2)
